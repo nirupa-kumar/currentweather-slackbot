@@ -48,7 +48,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="1" />
-          <entry key="js" value="623" />
+          <entry key="js" value="654" />
           <entry key="json" value="30" />
           <entry key="md" value="1406" />
           <entry key="txt" value="26" />
@@ -59,7 +59,7 @@
         <counts>
           <entry key="Dockerfile" value="1" />
           <entry key="JSON" value="30" />
-          <entry key="JavaScript" value="623" />
+          <entry key="JavaScript" value="654" />
           <entry key="Markdown" value="1406" />
           <entry key="PLAIN_TEXT" value="26" />
           <entry key="YAML" value="43" />
@@ -84,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="116" column="33" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
+            <state relative-caret-position="638">
+              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
             </state>
           </provider>
         </entry>
@@ -189,7 +189,7 @@
       <workItem from="1538419800043" duration="2526000" />
       <workItem from="1538432240843" duration="2480000" />
       <workItem from="1538435544663" duration="7028000" />
-      <workItem from="1538509494816" duration="748000" />
+      <workItem from="1538509494816" duration="927000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1538435868252</created>
@@ -216,7 +216,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12782000" />
+    <option name="totallyTimeSpent" value="12961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="0" width="1920" height="1200" extended-state="0" />
@@ -317,8 +317,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="116" column="33" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
+        <state relative-caret-position="638">
+          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
         </state>
       </provider>
     </entry>
