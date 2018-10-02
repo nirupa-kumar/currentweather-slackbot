@@ -109,7 +109,7 @@ controller.hears(['weather (.*)','(.*) weather','weather in (.*)','weather at (.
             let weather = JSON.parse(body);
             //let message =`It's ${weather.main.temp} degrees in ${weather.name}!`;
             //console.log(message);
-            bot.reply(message, `It's ${weather.main.temp} degrees Celsius right now in ${weather.name}!`);
+            bot.reply(message, `It's ${weather.main.temp} degrees right now in ${weather.name}!`);
         }
 
     });
