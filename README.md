@@ -36,7 +36,7 @@ Run the application with the following command:
 ```
 CLIENT_ID=xxx.yyy CLIENT_SECRET=abc PORT=zzzz npm start
 ```
-Now, access  https://botname.localtunnel.me/login and authorize your bot. If running locally, this will need to be done every time you restart your app. 
+Now, access  https://botname.localtunnel.me/login and authorize your bot. This will need to be done every time you restart your app. 
 
 ## Running the tests
 

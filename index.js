@@ -36,7 +36,8 @@ if (process.env.MONGOLAB_URI) {
     };
 } else {
     config = {
-        json_file_store: ((process.env.TOKEN)?'./db_slack_bot_ci/':'./db_slack_bot_a/'), //use a different name if an app or CI
+        //use a different name if an app or CI
+        json_file_store: ((process.env.TOKEN)?'./db_slack_bot_ci/':'./db_slack_bot_a/'),
     };
 }
 
@@ -140,7 +141,6 @@ controller.hears(['weather (.*)','(.*) weather','weather in (.*)','weather at (.
  * Define a function for initiating a conversation on installation
  * With custom integrations, we don't have a way to find out who installed us, so we can't message them :(
  */
-const argv = require('yargs').argv;
 let request = require('request');
 
 function onInstallation(bot, installer) {
@@ -230,15 +230,12 @@ controller.hears(['weather (.*)','(.*) weather'], 'direct_message', function (bo
     let city = message.match[1];
     let url =
         `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${process.env.OPEN_WEATHER_API_KEY}`;
-    //bot.reply(message, `Bringing it right up! The weather for ${city}`);
     request(url, function(err,response,body){
 
         if(err){
             console.log("error: ",err);
         } else {
             let weather = JSON.parse(body);
-            //let message =`It's ${weather.main.temp} degrees in ${weather.name}!`;
-            //console.log(message);
             bot.reply(message, `It's ${weather.main.temp} degrees right now in ${weather.name}!`);
         }
 
