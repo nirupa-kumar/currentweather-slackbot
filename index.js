@@ -93,7 +93,10 @@ controller.on('bot_channel_join', function (bot, message) {
 controller.hears('hello', 'direct_message', function (bot, message) {
     bot.reply(message, 'Hello!');
 });
-
+controller.hears('(.*) help (.*)','direct_message',function(bot,message){
+    bot.reply(message,` If you would like to know the current weather, this is how you will have to call me:`);
+    bot.reply(message,`city-name weather OR weather city-name OR weather in city-name`);
+});
 controller.hears(['weather (.*)','(.*) weather','weather in (.*)','weather at (.*)'], 'direct_message',
     function (bot, message) {
     let city = message.match[1];
@@ -105,7 +108,9 @@ controller.hears(['weather (.*)','(.*) weather','weather in (.*)','weather at (.
         if(err){
             console.log("error: ",err);
             bot.reply(message,`Sorry had some trouble getting the weather. Please go ahead and try again.`);
-        } else {
+        } else if(response.cod==="404") {
+            bot.reply(message,`Was that really a city? Please try again...`)
+        } else{
             let weather = JSON.parse(body);
             //let message =`It's ${weather.main.temp} degrees in ${weather.name}!`;
             //console.log(message);
