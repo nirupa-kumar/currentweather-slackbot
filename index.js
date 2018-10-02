@@ -52,9 +52,11 @@ if (process.env.TOKEN || process.env.SLACK_TOKEN) {
 } else if (process.env.CLIENT_ID && process.env.CLIENT_SECRET && process.env.PORT) {
     //Treat this as an app
     var app = require('./lib/apps');
-    var controller = app.configure(process.env.PORT, process.env.CLIENT_ID, process.env.CLIENT_SECRET, config, onInstallation);
+    var controller = app.configure(process.env.PORT, process.env.CLIENT_ID, process.env.CLIENT_SECRET,
+        config, onInstallation);
 } else {
-    console.log('Error: If this is a custom integration, please specify TOKEN in the environment. If this is an app, please specify CLIENT_ID, CLIENT_SECRET, and PORT in the environment');
+    console.log('Error: If this is a custom integration, please specify TOKEN in the environment. ' +
+        'If this is an app, please specify CLIENT_ID, CLIENT_SECRET, and PORT in the environment');
     process.exit(1);
 }
 
@@ -91,9 +93,11 @@ controller.hears('hello', 'direct_message', function (bot, message) {
     bot.reply(message, 'Hello!');
 });
 
-controller.hears(['weather (.*)','(.*) weather','weather in (.*)','weather at (.*)'], 'direct_message', function (bot, message) {
+controller.hears(['weather (.*)','(.*) weather','weather in (.*)','weather at (.*)'], 'direct_message',
+    function (bot, message) {
     let city = message.match[1];
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${process.env.OPEN_WEATHER_API_KEY}`;
+    let url =
+        `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${process.env.OPEN_WEATHER_API_KEY}`;
     //bot.reply(message, `Bringing it right up! The weather for ${city}`);
     request(url, function(err,response,body){
 
@@ -165,7 +169,8 @@ if (process.env.MONGOLAB_URI) {
     };
 } else {
     config = {
-        json_file_store: ((process.env.TOKEN)?'./db_slack_bot_ci/':'./db_slack_bot_a/'), //use a different name if an app or CI
+        //use a different name if an app or CI
+        json_file_store: ((process.env.TOKEN)?'./db_slack_bot_ci/':'./db_slack_bot_a/'),
     };
 }
 
@@ -183,7 +188,8 @@ if (process.env.TOKEN || process.env.SLACK_TOKEN) {
     var app = require('./lib/apps');
     var controller = app.configure(process.env.PORT, process.env.CLIENT_ID, process.env.CLIENT_SECRET, config, onInstallation);
 } else {
-    console.log('Error: If this is a custom integration, please specify TOKEN in the environment. If this is an app, please specify CLIENTID, CLIENTSECRET, and PORT in the environment');
+    console.log('Error: If this is a custom integration, please specify TOKEN in the environment. ' +
+        'If this is an app, please specify CLIENTID, CLIENTSECRET, and PORT in the environment');
     process.exit(1);
 }
 
@@ -222,7 +228,8 @@ controller.hears('hello', 'direct_message', function (bot, message) {
 
 controller.hears(['weather (.*)','(.*) weather'], 'direct_message', function (bot, message) {
     let city = message.match[1];
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${process.env.OPEN_WEATHER_API_KEY}`;
+    let url =
+        `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${process.env.OPEN_WEATHER_API_KEY}`;
     //bot.reply(message, `Bringing it right up! The weather for ${city}`);
     request(url, function(err,response,body){
 
