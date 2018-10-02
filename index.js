@@ -93,7 +93,7 @@ controller.on('bot_channel_join', function (bot, message) {
 controller.hears('hello', 'direct_message', function (bot, message) {
     bot.reply(message, 'Hello!');
 });
-controller.hears('(.*) help (.*)','direct_message',function(bot,message){
+controller.hears('help','direct_message',function(bot,message){
     bot.reply(message,` If you would like to know the current weather, this is how you will have to call me:`);
     bot.reply(message,`city-name weather OR weather city-name OR weather in city-name`);
 });
