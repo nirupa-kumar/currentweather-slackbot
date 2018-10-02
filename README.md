@@ -14,7 +14,6 @@ purposes. See deployment for notes on how to deploy the project on a live system
 
 ### Prerequisites
 
-
 Will need to have both Node and npm installed. Register for the [OpenWeatherMapAPI](http://openweathermap.org/api) and 
 get the API key.Register at Slack, create an application.This will generate a Client ID and Client Secret.
 
@@ -69,6 +68,7 @@ environment variables will need to be set:
 * CLIENT_SECRET
 * MONGOLAB_URI
 * OPEN_WEATHER_API_KEY
+
 I used the Heroku add-on MongoLab for the datastore. 
 The values have been set as Config Vars.
 The [tutorial](https://devcenter.heroku.com/articles/getting-started-with-nodejs) on the Heroku site was very useful to 
