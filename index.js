@@ -108,10 +108,13 @@ controller.hears(['weather (.*)','(.*) weather','weather in (.*)','weather at (.
         if(err){
             console.log("error: ",err);
             bot.reply(message,`Sorry had some trouble getting the weather. Please go ahead and try again.`);
-        } else if(response.data.cod==="404") {
-            bot.reply(message,`Was that really a city? Please try again...`)
-        } else{
+        }
+        // else if(response.data.cod==="404") {
+        //     bot.reply(message,`Was that really a city? Please try again...`)
+        // }
+        else{
             let weather = JSON.parse(body);
+            console.log(weather);
             //let message =`It's ${weather.main.temp} degrees in ${weather.name}!`;
             //console.log(message);
             bot.reply(message, `It's ${weather.main.temp} degrees right now in ${weather.name}!`);
