@@ -2,6 +2,10 @@
 
 Gets the current weather conditions for a given city.
 
+## Spinning up the app on Heroku
+Please go to where the app is hosted on [Heroku](https://guarded-reef-19795.herokuapp.com/) 
+This will get the app up and running in about 5 minutes after which you should be able to directly chat with the bot.
+
 ## Architecture
 Entire application sits on Heroku. Have a Mongolab db hooked up to take care of Heroku not persisting locally written 
 files. Automatic deploy happens every time there is a push to the github repo.Ideally should have some CI tests running 
