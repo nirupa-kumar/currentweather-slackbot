@@ -61,6 +61,7 @@ Would like to use ESlint & prettier for this
 For deploying locally:
 Generate an API key from [OpenWeatherMap](http://openweathermap.org/api) and set the environment variable : 
 OPEN_WEATHER_API_KEY
+Set the re-direct URL to point to the locally running app : https://botname.localtunnel.me/oauth
 Generate a Client ID and Client Secret token and use that to start the app. 
 ```
 CLIENT_ID=xxx.yyy CLIENT_SECRET=abc PORT=zzzz npm start
@@ -75,6 +76,8 @@ environment variables will need to be set:
 
 I used the Heroku add-on MongoLab for the datastore. 
 The values have been set as Config Vars.
+Set the re-direct URL to point to the heroku app : https://abc-def-1234.heroku.app.com/oauth
+
 The [tutorial](https://devcenter.heroku.com/articles/getting-started-with-nodejs) on the Heroku site was very useful to 
 help get things up and running.
 
