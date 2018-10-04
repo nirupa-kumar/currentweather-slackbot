@@ -15,7 +15,7 @@
     "bot"
   ],
   "author": "Nirupa Anantha Kumar",
-  "homepage": "https://github.com/nirupa-kumar/currentweather-slackbot/blob/master/README.mdhttps://github.com/",
+  "homepage": "https://github.com/nirupa-kumar/currentweather-slackbot/blob/master/README.md",
   "engines": {
     "node": "8.0.0"
   },

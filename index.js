@@ -97,7 +97,7 @@ controller.hears('help','direct_message',function(bot,message){
     bot.reply(message,` If you would like to know the current weather, this is how you will have to call me:city-name 
     weather OR weather city-name OR weather in city-name OR weather at city-name`);
 });
-controller.hears(['weather (.*)','(.*) weather','weather in (.*)','weather at (.*)'], 'direct_message',
+controller.hears(['weather (.*)','(.*) weather','weather in (.*)','weather at (.*)'], 'direct_message,mention,direct_mention',
     function (bot, message) {
     let city = message.match[1];
     let url =
